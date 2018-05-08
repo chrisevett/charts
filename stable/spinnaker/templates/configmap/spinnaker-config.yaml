@@ -350,6 +350,12 @@ data:
           project: {{ .Values.gcs.project }}
         s3:
           enabled: false
+        {{ else if .Values.s3.enabled}}
+        gcs:
+          enabled: false
+        s3:
+          enabled: true
+          region: {{ .Values.s3.region }}
         {{ else }}
         gcs:
           enabled: false

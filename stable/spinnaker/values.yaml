@@ -101,6 +101,12 @@ minio:
   secretKey: spinnakeradmin
   nodeSelector: {}
 
+s3:
+  enabled: true
+  accessKey: spinnakeradmin
+  secretKey: spinnakeradmin
+  nodeSelector: {}
+
 gcs:
   enabled: false
   project: my-project-name

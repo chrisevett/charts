@@ -7,5 +7,10 @@ metadata:
 data:
   credentials: |
     [default]
+    {{ if .Values.s3.enabled }}
+    aws_access_key_id={{ .Values.s3.accessKey }}
+    aws_secret_access_key={{ .Values.s3.secretKey }}
+    {{ else }}
     aws_access_key_id={{ .Values.minio.accessKey }}
     aws_secret_access_key={{ .Values.minio.secretKey }}
+    {{ end }}
